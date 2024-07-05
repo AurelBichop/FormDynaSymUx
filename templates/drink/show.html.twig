@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Drink{% endblock %}
+
+{% block body %}
+    <h1>Drink</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ drink.id }}</td>
+            </tr>
+            <tr>
+                <th>TeaOrCoffee</th>
+                <td>{{ drink.teaOrCoffee }}</td>
+            </tr>
+            <tr>
+                <th>TeaType</th>
+                <td>{{ drink.teaType }}</td>
+            </tr>
+            <tr>
+                <th>CoffeType</th>
+                <td>{{ drink.coffeType }}</td>
+            </tr>
+            <tr>
+                <th>Sugar</th>
+                <td>{{ drink.sugar ? 'Yes' : 'No' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_drink_index') }}">back to list</a>
+
+    <a href="{{ path('app_drink_edit', {'id': drink.id}) }}">edit</a>
+
+    {{ include('drink/_delete_form.html.twig') }}
+{% endblock %}

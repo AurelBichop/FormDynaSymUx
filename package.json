@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "@babel/cli": "^7.24.7",
+    "@babel/core": "^7.24.7",
+    "@babel/preset-react": "^7.24.7"
+  },
+  "scripts": {
+    "build-react": "babel assets/react --out-dir assets/build/react --presets=@babel/preset-react"
+  }
+}

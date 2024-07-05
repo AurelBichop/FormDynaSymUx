@@ -1,0 +1,27 @@
+<div{{ attributes }}>
+    <input
+        type="text"
+        data-model="query"
+        placeholder="Results update as you type..."
+        class="form-control"
+    >
+{{ ux_icon('flowbite:user-solid') }}
+{{ ux_icon('bi:backpack2-fill', {height: '16px', width: '16px'}) }}
+
+    {% if computed.packages|length > 0 %}
+        <div data-loading="addClass(opacity-50)" class="mt-3 row">
+            {% for package in computed.packages %}
+                {{ package.id }}
+                {# { include('main/_package_in_list.html.twig', {package}) } #}
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="pt-3">Ah! No packages found matching "{{ query }}"</div>
+    {% endif %}
+
+
+<br />
+    <div {{ react_component('Hello', { 'fullName': 'Aurel' }) }}>
+        Loading... <i class="fas fa-cog fa-spin fa-3x"></i>
+    </div>
+</div>
